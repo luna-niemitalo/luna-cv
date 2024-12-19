@@ -1,0 +1,16 @@
+# Set Expires headers for image files
+ExpiresByType image/jpeg "access plus 1 year"
+ExpiresByType image/png "access plus 1 year"
+ExpiresByType image/gif "access plus 1 year"
+ExpiresByType image/webp "access plus 1 year"
+ExpiresByType image/svg+xml "access plus 1 year"
+ExpiresByType video/vp9 "access plus 1 year"
+
+# Set Expires headers for CSS and JavaScript files
+ExpiresByType text/css "access plus 1 month"
+ExpiresByType text/javascript "access plus 1 month"
+ExpiresByType application/javascript "access plus 1 month"
+
+# Set Expires headers for fonts
+ExpiresByType application/font-woff "access plus 1 year"
+ExpiresByType application/font-woff2 "access plus 1 year"
