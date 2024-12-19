@@ -79,12 +79,46 @@ a {
     color: var(--link-color);
 }
 
-#main-name {
+.no-print {
+    display: inherit;
+    @media print {
+        display: none;
+    }
+}
+.print {
+    display: none;
+    @media print {
+        display: inherit;
+    }
+}
+
+.main-name {
+    display: flex;
+    flex-direction: row;
     font-size: 24px;
     text-align: center;
     margin-bottom: 20px;
     color: var(--highlight-color);
     text-shadow: 2px 2px 4px var(--background-alt);
+
+    button {
+        pointer-events: all;
+        background-color: #4CAF50; /* Green */
+        color: white;
+        border: none;
+        //padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+
 }
 #features-title {
     text-align: center;
