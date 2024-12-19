@@ -154,27 +154,36 @@ body {
     height: 250px;
     margin: auto;
 }
-.profile-pic {
-//width: 80%;
-//margin: 10%;
-//border-radius: 50%;
-//object-fit: cover;
-}
-.hexagon img {
-    position: absolute;
-//top: -43.3px;
-    left: 0;
-    width: 100%;
-    height: auto;
-}
+
 .hexagon {
-    position: relative;
-    width: 80%;
-    height: 80%;
-    margin: 10%;
     overflow: hidden;
     clip-path: ellipse(40% 50%);
+    position: fixed;
+    width: 200px;
+    height: 200px;
+    margin: 10px 70px;
+    left: 0;
+    transition: opacity 0.5s ease; /* Smooth transition */
+    object-fit: cover;
 }
+
+.thumbnail {
+    z-index: 1;
+}
+
+.fullsize {
+    z-index: 2;
+    opacity: 0;
+}
+
+#pic-container:has(.fullsize:valid) .fullsize {
+    opacity: 1;
+}
+
+#pic-container:has(.fullsize:valid) .thumbnail {
+    opacity: 0;
+}
+
 
 .sidebar h2, .main h2 {
     margin-top: 0;
