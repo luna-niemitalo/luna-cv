@@ -1,11 +1,5 @@
 
 :root {
-    /* Main Crimson Color */
-
-    --highlight-color: #FF6698; /* Bright crimson highlight for emphasis */
-    --link-color: #FF617D; /* Vivid and striking reddish-pink for links */
-    --border-color: #3e3e42; /* Soft gray border color */
-
 
     /* Base Colors */
     --background-color: #000;
@@ -13,27 +7,16 @@
     --background-alt: #160002;
     --accent-color: #F50000;
     --text-color: #ffcfcf;
-    --text-alt-color: #999;
-
-    --text-selection-color: #ff7f7f;
 
     ::selection {
         background-color: var(--crimson);
-        color: var(--highlight-color);
+        color: #FF6698;
     }
-
-    --blur: 1px;
-    --shadow-color: #780000;
 
     --font-small: 0.85rem;
     --font-medium: 1.5rem;
     --font-large: 1.75rem;
 
-    --input-padding: 12px;
-    --input-border-radius: 15px;
-    --input-border-width: 3px;
-    --input-border-color: inherit;//var(--accent-color);
-    --input-background: var(--background-color);
 
     --sidebar-width: 300px;
 }
@@ -49,9 +32,9 @@
 .input-wrapper {
     position: relative;
     background-color: var(--background-color);
-    border-radius: var(--input-border-radius);
+    border-radius: 15px;
     min-width: min-content;
-    border: var(--input-border-width) solid var(--input-border-color);
+    border: 3px solid inherit;
     height: fit-content;
 
     margin: 5px;
@@ -61,7 +44,7 @@
 }
 
 a {
-    color: var(--link-color);
+    color: #FF617D;
 }
 
 .no-print {
@@ -161,10 +144,9 @@ body {
     }
 }
 
-
 .sidebar h2, .main h2 {
     user-select: none;
-    left: var(--input-padding);
+    left: 12px;
     margin: 0;
 
     font-size: var(--font-medium);
