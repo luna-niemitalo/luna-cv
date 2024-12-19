@@ -2,8 +2,8 @@
 :root {
     /* Main Crimson Color */
 
-    --highlight-color: #b3003b; /* Bright crimson highlight for emphasis */
-    --link-color: #ff4d6d; /* Vivid and striking reddish-pink for links */
+    --highlight-color: #FF6698; /* Bright crimson highlight for emphasis */
+    --link-color: #FF617D; /* Vivid and striking reddish-pink for links */
     --border-color: #3e3e42; /* Soft gray border color */
 
 
@@ -11,11 +11,16 @@
     --background-color: #000;
     --crimson: #2e0000;
     --background-alt: #160002;
-    --accent-color: #8B0000;
+    --accent-color: #F50000;
     --text-color: #ffcfcf;
     --text-alt-color: #999;
 
     --text-selection-color: #ff7f7f;
+
+    ::selection {
+        background-color: var(--crimson);
+        color: var(--highlight-color);
+    }
 
     --blur: 1px;
     --shadow-color: #780000;
@@ -98,7 +103,7 @@ a {
     font-size: 24px;
     text-align: center;
     margin-bottom: 20px;
-    color: var(--highlight-color);
+    color: var(--accent-color);
     text-shadow: 2px 2px 4px var(--background-alt);
 
     button {
@@ -165,7 +170,7 @@ body {
 
         }
         li::marker {
-            color: var(--highlight-color);
+            color: var(--accent-color);
         }
     }
 }
@@ -221,7 +226,7 @@ body {
 
 .sidebar h2, .main h2 {
     margin-top: 0;
-    color: var(--highlight-color);
+    color: var(--accent-color);
 }
 
 .inline {
@@ -232,7 +237,7 @@ body {
 
     .tag {
         font-size: 18px;
-        color: var(--highlight-color);
+        color: var(--accent-color);
         text-shadow: 2px 2px 4px var(--background-alt);
         font-weight: bold;
 
