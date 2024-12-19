@@ -36,5 +36,5 @@ def package_files(src_folder, output_file):
 
 # Run the script
 src_folder = 'src'
-output_file = './deploy/index.html'
+output_file = './index.html'
 package_files(src_folder, output_file)
