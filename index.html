@@ -277,6 +277,49 @@
 
     </div>
 </div>
-<script type="text/javascript" src="script.js" defer></script>
+<script>
+    if (typeof document !== 'undefined') {
+        const animContainer = document.getElementById('anim-container');
+        animContainer.style.display = 'inherit';
+
+    } else {
+        console.error('Document not found');
+    }
+    const svg = document.getElementById("animation");
+    const midpoint = 500;
+    const paths = [
+        {
+            elementId: 'curve1',
+            origin: { x: 110, y: midpoint },
+            angle: 0,
+            frequency: -4, // Hz
+            amplitude: 15 // px
+        },
+        {
+            elementId: 'curve2',
+            origin: { x: 100, y: midpoint },
+            angle: -2,
+            frequency: -2, // Hz
+            amplitude: 15// px
+        },
+        {
+            elementId: 'curve3',
+            origin: { x: 100, y: midpoint },
+            angle: 3,
+            frequency: 4, // Hz
+            amplitude: 15 // px
+        }
+    ];
+    const worker = new Worker('./script.js');
+    worker.postMessage(paths);
+    worker.addEventListener('message', event => {
+        if (event.data['name'] === 'combinedPath'){
+            document.getElementById("combinedCurves").setAttribute("d", event.data['value'] );
+        } else {
+
+            document.getElementById(event.data['name']).setAttribute("d", event.data['value'] );
+        }
+    });
+</script>
 </body>
 </html>
