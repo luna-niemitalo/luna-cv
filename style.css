@@ -28,7 +28,10 @@
         --sidebar-padding: 0px;
 
     }
+
 }
+
+
 
 #background-video {
     height: 100vh;
@@ -62,10 +65,9 @@ a {
     height: 100vh;
     position: fixed;
     top: 0;
-    left: 240px;
+    left: calc(var(--sidebar-width) - 60px);
     @media screen and (max-width: 600px) {
         left: 160px;
-
     }
     #fillArea {
         fill: var(--crimson);
@@ -88,7 +90,7 @@ a {
 .main-name {
     font-size: var(--font-large) !important;
 }
-#features-title {
+.features-title {
     text-align: center;
     margin-bottom: 0px;
     font-size: var(--font-large);
@@ -118,10 +120,11 @@ body {
 
 
 
+
 .sidebar {
     width: var(--sidebar-width);
     padding-right: 140px;
-        padding-right: 0;
+    padding-right: 0;
     @media screen and (max-width: 600px) {
         --sidebar-padding: 0px;
     }
@@ -136,7 +139,7 @@ body {
         width: inherit;
         overflow: auto;
         position: fixed;
-        height: calc(100vh - 250px);
+        height: 100vh;//calc(100vh - 250px);
     }
 
     .features {
@@ -154,21 +157,37 @@ body {
         }
     }
 }
+#print-sidebar {
+    display: none;
+    @media print {
+        display: inherit;
+        position: relative;
+        width: 100vw;
+        padding: 0;
+        margin: 0;
+        border: none;
+        .scrollable {
+            position: relative;
+        }
+    }
+}
+#mainSidebar {
+    position: fixed;
+    @media print {
+        display: none;
+
+    }
+}
 .icon {
     width: 1em;
     height: 1em;
     vertical-align: -0.125em;
 }
-html {
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    position: fixed;
-}
+
 .main {
     padding: 20px;
-    overflow: scroll;
     left: calc(var(--sidebar-width) + calc(var(--sidebar-padding) * 2));
+
     @media screen and (max-width: 600px) {
         padding: 0px;
     }
@@ -180,8 +199,13 @@ html {
         color: var(--background-alt);
         line-height: 0px;
     }
+    @media print {
+        left: 0;
+        width: 100vw;
+
+    }
 }
-#pic-container {
+.pic-container {
     text-align: center;
     width: 250px;
     height: 250px;
@@ -265,9 +289,6 @@ html {
     margin-bottom: 20px;
     @media print {
         break-inside: avoid;
-        div {
-            break-inside: avoid;
-        }
     }
 }
 
@@ -282,4 +303,7 @@ ul {
 
 ul li {
     margin-bottom: 10px;
+    @media print {
+        break-inside: avoid;
+    }
 }
