@@ -3,11 +3,11 @@
 addEventListener('message', event => {
     const paths = event.data;
 
-    const numPoints = 1100 / 2; // Number of curve points
+    const numPoints = 1100 / 4; // Number of curve points
     const curveHeight = 2200; // Total height of the curve
 
     function animate(time) {
-        const sceneTime = time / 5000; // Convert time to seconds
+        const sceneTime = time / 8000; // Convert time to seconds
         let combinedPath = "";
         paths.forEach(({ elementId, origin, angle, frequency, amplitude }) => {
             const points = [];

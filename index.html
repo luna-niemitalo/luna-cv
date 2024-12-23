@@ -105,8 +105,17 @@
     <div class="main">
         <div class="section">
             <h2>Work Experience</h2>
-            <h3>Refined Software Oy (May 2023 - Present)</h3>
-            <p>Software Developer: Focused on JavaScript and Vue.js development, improving frontend efficiency...</p>
+            <div>
+                <p>Refined Software Oy (May 2023 - Sep 2024)</p>
+                <ul>
+                    <li>Primarily focused on frontend and tooling development, implementing TypeScript and Prettier and upgrading Vue2 to Vue3 in an existing VueJS/JavaScript codebase.</li>
+                    <li>Implementation required communicating between teams regarding their status on tool adoption and implementation, specifying details and requirements, and drafting proposals for implementation details and standards we'd use.</li>
+                    <li>Built several frontend components with comprehensive tests, such as a filtering system for data tables that dynamically saves filters to the URL. The tests were designed to dynamically test all available filter options to make sure everything worked even if new options were added later.</li>
+                    <li>Responded to and resolved bug tickets based on client ticketing system, in a continuous deployment environment. This required following and improving a strict process involving required tests, developer review, developer testing, and UX team review before deployment to the master branch, ensuring live updates within an hour.</li>
+                    <li>Contributed to enhancing development tooling, testing frameworks, and improving the overall speed and fluidity of the development workflow.</li>
+                    <li>Advocated for and implemented the 'IDE configs in repo' approach, ensuring uniform IDE and styling settings across the team regardless of individual tool preferences.</li>
+                </ul>
+            </div>
             <p><strong>Process Genius</strong> (Feb 2022 – Mar 2023)</p>
             <ul>
                 <li>Independently designed, implemented, and tested custom software modules tailored to client requirements, primarily focused on creating interactive digital twins for factories and industrial facilities.</li>
@@ -287,28 +296,28 @@
     }
     const svg = document.getElementById("animation");
     const midpoint = window.screen.height / 2;
-    const angle = 3;
+    const angle = 2;
     const amplitude = 15;
     const paths = [
         {
             elementId: 'curve1',
             origin: { x: 100, y: midpoint },
             angle: 0,
-            frequency: -4, // Hz
+            frequency: -2, // Hz
             amplitude // px
         },
         {
             elementId: 'curve3',
             origin: { x: 100, y: midpoint },
             angle: angle,
-            frequency: 2, // Hz
+            frequency: 1, // Hz
             amplitude // px
         },
         {
             elementId: 'curve2',
             origin: { x: 100, y: midpoint },
             angle: -angle,
-            frequency: -2, // Hz
+            frequency: -1, // Hz
             amplitude// px
         },
     ];
