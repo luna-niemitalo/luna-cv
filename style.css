@@ -4,7 +4,7 @@
 
     /* Base Colors */
     --background-color: #000;
-    --crimson: #2e0000;
+    --crimson: #600000;
     --background-alt: #160002;
     --accent-color: #F50000;
     --text-color: #ffcfcf;
@@ -18,9 +18,18 @@
     --font-medium: 1.5rem;
     --font-large: 1.75rem;
 
+    --sidebar-padding: 20px;
+
+
 
     --sidebar-width: 300px;
+    @media screen and (max-width: 600px) {
+        --sidebar-width: 250px;
+        --sidebar-padding: 0px;
+
+    }
 }
+
 #background-video {
     height: 100vh;
     position: fixed;
@@ -49,11 +58,18 @@ a {
 }
 
 
-svg {
+#animation {
     height: 100vh;
     position: fixed;
     top: 0;
     left: 240px;
+    @media screen and (max-width: 600px) {
+        left: 160px;
+
+    }
+    #fillArea {
+        fill: var(--crimson);
+    }
 }
 
 .no-print {
@@ -88,6 +104,10 @@ body {
     display: flex;
     background-color: var(--background-alt);
     color: var(--text-color);
+    @media screen and (max-width: 600px) {
+        font-size: small;
+
+    }
 }
 
 .container {
@@ -96,15 +116,28 @@ body {
     height: 100vh;
 }
 
+
+
 .sidebar {
     width: var(--sidebar-width);
-    padding: 20px;
     padding-right: 140px;
+        padding-right: 0;
+    @media screen and (max-width: 600px) {
+        --sidebar-padding: 0px;
+    }
+    padding: var(--sidebar-padding);
+
     background-color: var(--crimson);
     color: var(--text-color);
     overflow: auto;
     position: fixed;
     height: 100vh;
+    .scrollable {
+        width: inherit;
+        overflow: auto;
+        position: fixed;
+        height: calc(100vh - 250px);
+    }
 
     .features {
         li {
@@ -121,13 +154,22 @@ body {
         }
     }
 }
-
+html {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: fixed;
+}
 .main {
     padding: 20px;
-    left: calc(var(--sidebar-width) + 50px);
+    overflow: scroll;
+    left: calc(var(--sidebar-width) + calc(var(--sidebar-padding) * 2));
+    @media screen and (max-width: 600px) {
+        padding: 0px;
+    }
     z-index: 1;
     position: relative;
-    width: calc(100vw - 400px - 40px);
+    width: calc(100vw - var(--sidebar-width) - calc(var(--sidebar-padding) * 4));
     .ATS-Bullshit {
         font-size: 1px;
         color: var(--background-alt);
@@ -139,17 +181,19 @@ body {
     width: 250px;
     height: 250px;
     margin: auto;
+    z-index: 1;
+    position: relative;
     img {
 
         overflow: hidden;
         clip-path: ellipse(40% 50%);
-        position: fixed;
         width: 200px;
         height: 200px;
-        margin: 10px 70px;
         left: 0;
         transition: opacity 0.5s ease; /* Smooth transition */
         object-fit: cover;
+        position: relative;
+        margin: 10px auto;
     }
 }
 

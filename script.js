@@ -3,8 +3,8 @@
 addEventListener('message', event => {
     const paths = event.data;
 
-    const numPoints = 1000; // Number of curve points
-    const curveHeight = 1000; // Total height of the curve
+    const numPoints = 1100 / 2; // Number of curve points
+    const curveHeight = 2200; // Total height of the curve
 
     function animate(time) {
         const sceneTime = time / 5000; // Convert time to seconds
@@ -21,7 +21,7 @@ addEventListener('message', event => {
             }
             const pathData = `M ${points.map((p) => p).join(" L ")}`;
             postMessage({name: elementId, value: pathData});
-            combinedPath += `${pathData} L 0,1000 L 0,0 Z `;
+            combinedPath += `${pathData} L 0,2200 L 0,0 Z `;
         });
 
         // Update the combined clip path for the filled region
