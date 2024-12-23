@@ -154,6 +154,11 @@ body {
         }
     }
 }
+.icon {
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.125em;
+}
 html {
     width: 100vw;
     height: 100vh;
@@ -215,12 +220,44 @@ html {
     margin-bottom: 5px;
     justify-content: space-between;
 
-    .tag {
+    .label {
         font-size: 18px;
         color: var(--accent-color);
         text-shadow: 2px 2px 4px var(--background-alt);
         font-weight: bold;
 
+    }
+}
+.tags {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.tag {
+    white-space: nowrap;
+    background-color: #fff;
+    border: 3px solid #000;
+    border-radius: 5px;
+    max-width: 100px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    gap: 3px;
+
+    &.vue {
+        background-color: #3fb17e;
+    }
+    &.typescript {
+        border: none;
+        padding: unset;
+        background-color: transparent;
+    }
+    &.misc {
+        background-color: #ffcfcf;
+        color: var(--background-alt);
+        height: 18px    ;
+        font-size: small;
     }
 }
 
