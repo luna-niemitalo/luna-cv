@@ -69,13 +69,16 @@ a {
     @media screen and (max-width: 600px) {
         left: 160px;
     }
+    @media print {
+        left: 0;
+    }
     #fillArea {
         fill: var(--crimson);
     }
 }
 
 .no-print {
-    display: inherit;
+    display: block;
     @media print {
         display: none;
     }
@@ -83,12 +86,17 @@ a {
 .print {
     display: none;
     @media print {
-        display: inherit;
+        display: block;
     }
 }
 
 .main-name {
     font-size: var(--font-large) !important;
+}
+#features-title {
+    @media print {
+        display: none;
+    }
 }
 .features-title {
     text-align: center;
@@ -116,6 +124,9 @@ body {
     display: flex;
     width: 800px;
     height: 100vh;
+    @media print {
+        flex-direction: column;
+    }
 }
 
 
@@ -135,49 +146,44 @@ body {
     overflow: auto;
     position: fixed;
     height: 100vh;
+    @media print {
+        background-color: transparent;
+        overflow: unset;
+        height: unset;
+        position: relative;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        padding: unset;
+        width: calc(100vw - 140px);
+        margin-left: 100px;
+    }
     .scrollable {
+        display: flex;
+        flex-direction: column;
         width: inherit;
         overflow: auto;
         position: fixed;
-        height: 100vh;//calc(100vh - 250px);
-    }
-
-    .features {
-        li {
-            margin: 1rem 0;
-            ul {
-                li {
-                    margin: 5px 0;
-                }
+        height: 100vh;
+        @media print {
+            flex-direction: row;
+            flex-wrap: wrap;
+            overflow: unset;
+            height: unset;
+            position: relative;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            width: calc(100vw - 140px);
+            .input-wrapper {
+                flex-grow: unset;
+                align-self: center;
             }
 
         }
-        li::marker {
-            color: var(--accent-color);
-        }
     }
 }
-#print-sidebar {
-    display: none;
-    @media print {
-        display: inherit;
-        position: relative;
-        width: 100vw;
-        padding: 0;
-        margin: 0;
-        border: none;
-        .scrollable {
-            position: relative;
-        }
-    }
-}
-#mainSidebar {
-    position: fixed;
-    @media print {
-        display: none;
 
-    }
-}
 .icon {
     width: 1em;
     height: 1em;
@@ -201,7 +207,9 @@ body {
     }
     @media print {
         left: 0;
-        width: 100vw;
+        width: calc(100vw - 140px);
+        margin-left: 100px;
+
 
     }
 }
@@ -287,9 +295,7 @@ body {
 
 .section {
     margin-bottom: 20px;
-    @media print {
-        break-inside: avoid;
-    }
+
 }
 
 .section h3 {
